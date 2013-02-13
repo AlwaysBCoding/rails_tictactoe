@@ -1,0 +1,14 @@
+!!!
+%html
+	%head
+		%title JdlTictactoe
+		= stylesheet_link_tag    "application", :media => "all"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+	%body
+		%header
+			%h1 Tic-Tac-Toe by Jordan Leigh
+			%p
+				%a{href: "https://github.com/AlwaysBCoding/tictactoe"} View the Source Code on Github
+		.wrapper
+			= yield

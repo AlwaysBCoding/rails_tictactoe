@@ -1,0 +1,54 @@
+header {
+  font-family: 'Kaushan Script', cursive;
+  h1 { margin-top: 5px; margin-bottom: 5px;}
+  a {
+    text-decoration: none;
+    color: #08C;
+    font-size: 20px;
+  }
+}
+
+#wrapper {
+  position: relative;
+}
+
+#board {
+  border: 5px solid black;
+  min-height: 600px; max-height: 600px; height: 600px;
+  min-width: 600px; max-width: 600px; width: 600px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.square {
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+
+  span {
+    font-family: "Helvetica";
+    font-size: 150px; font-weight: bold; color: #5CBE73;
+    text-shadow: 3px 3px rgb(24,43,4);
+    position: absolute;
+    opacity: 0;
+    top: 10px; left: 40px; }
+
+  &:hover {
+    background-color: lighten(#5CBE73, 10%); }
+
+  &.selected:hover {
+    background-color: #fff; };
+}
+
+
+.square[data-x="1"], .square[data-x="2"] {
+  border-left: 5px solid black;
+}
+
+.square[data-y="1"], .square[data-y="2"] {
+  border-top: 5px solid black;
+}
+
+.highlight {
+  background-color: #f9f27c;
+}
