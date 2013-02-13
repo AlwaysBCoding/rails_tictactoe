@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def board
-  	@board = JdlTictactoe::Board.new(6)
+  	size = 3 if !params[:size]
+  	size ||= params[:size].to_i
+  	@board = JdlTictactoe::Board.new(size)
   end
 
   def update_move
