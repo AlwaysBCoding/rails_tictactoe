@@ -1,8 +1,15 @@
-var response = <%= @response %>;
-var $square = ($("#" + response));
-$square.trigger("click")
+<% if @response %>
+	var response = <%= @response %>;
+	var $square = ($("#" + response));
+	$square.trigger("click")
+<% end %>
 
 var gameOver = <%= @gameOver %>;
+var loss = <%= @loss %>;
 if(gameOver == true) {
-	$("#you-lose").modal();
+	if(loss == true) {
+		$("#you-lose").modal();
+	} else {
+		$("#draw-game").modal();
+	}
 }

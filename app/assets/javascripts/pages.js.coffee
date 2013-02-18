@@ -57,5 +57,5 @@ $ ->
 
 	setTimeout (->
 	  drop_config_modal()
-	), 500
+	), 300
 
