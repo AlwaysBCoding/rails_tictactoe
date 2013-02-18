@@ -32,6 +32,23 @@ $ ->
 		_.each $(".square"), (item, index) ->
 				game.board.squares.push (index + 1)
 
+	human_update_move = ($square) ->
+		id = parseInt $square.attr("id"), 10
+		index = _.indexOf(game.board.squares, id)
+		$square.addClass("selected")
+
+		if game.turn == "player1"
+			game.board.squares[index] = game.player1.mark
+			$square.append("<p class='mark1'>" + game.player1.mark + "</p>")
+		else if game.turn == "player2"
+			game.board.squares[index] = game.player2.mark
+			$square.append("<p class='mark2'>" + game.player2.mark + "</p>")
+
+		$square.find("p").animate(opacity: 1, 500)
+
+		$.post "/check_game_status", { game: game }
+		game.turn = game.switch_turn()
+
 	update_move = ($square) ->
 			id = parseInt $square.attr("id"), 10
 			index = _.indexOf(game.board.squares, id)
@@ -54,7 +71,10 @@ $ ->
 	$(".square").on "click", (e) ->
 		$square = $(e.target)
 		unless $square.hasClass("selected") || $square.context.nodeName == "P"
-			update_move($square)
+			unless game.player1.species == "human" and game.player2.species == "human"
+				update_move($square)
+			else
+				human_update_move($square)
 
 	$("#config").on "hide", ->
 		initialize_game()
