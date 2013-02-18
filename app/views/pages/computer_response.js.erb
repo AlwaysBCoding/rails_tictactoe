@@ -1,3 +1,8 @@
 var response = <%= @response %>;
 var $square = ($("#" + response));
 $square.trigger("click")
+
+var gameOver = <%= @gameOver %>;
+if(gameOver == true) {
+	alert("THE GAME IS OVER");
+}

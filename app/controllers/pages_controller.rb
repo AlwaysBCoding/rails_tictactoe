@@ -16,6 +16,12 @@ class PagesController < ApplicationController
   		end
   	end
   	@response = @player2.minimax(game, :player2)
+  	game.mark_square(@response, @player2.mark)
+  	if game.over?
+  		@gameOver = true
+  	else
+  		@gameOver = false
+  	end
   	render "computer_response"
   end
 end
