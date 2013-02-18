@@ -10,14 +10,12 @@ $ ->
 			return "player1" if game.turn == "player2"
 	}
 
+	initialize_game = ->
+		$("#config").modal()
+
 	initialize_squares = ->
 	_.each $(".square"), (item, index) ->
 			game.board.squares.push (index + 1)
-
-	initialize_game = ->
-		console.log "SOMETHING"
-
-	initialize_squares()
 
 	update_move = ($square) ->
 			id = parseInt $square.attr("id"), 10
@@ -42,3 +40,8 @@ $ ->
 		$square = $(e.target)
 		unless $square.hasClass("selected") || $square.context.nodeName == "P"
 			update_move($square)
+
+	setTimeout (->
+	  initialize_game()
+	), 500
+	initialize_squares()

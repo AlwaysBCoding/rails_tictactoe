@@ -4,5 +4,5 @@ $square.trigger("click")
 
 var gameOver = <%= @gameOver %>;
 if(gameOver == true) {
-	alert("THE GAME IS OVER");
+	$("#you-lose").modal();
 }

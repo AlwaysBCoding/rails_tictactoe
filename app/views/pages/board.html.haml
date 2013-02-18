@@ -8,3 +8,10 @@
 		%h3 This is one input
 	.modal-footer
 		%a.btn.btn-primary{href: "#", data: { dismiss: "modal" }} Start Game
+
+#you-lose.modal.hide.fade
+	.modal-body
+		%h2 The Computer has defeated you.
+	.modal-footer
+		%a.btn{href: "#", data: { dismiss: "modal"}} Close
+		%a.btn.btn-primary{href: "#", data: { dismiss: "modal"}} Play Again
