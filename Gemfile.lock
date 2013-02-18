@@ -54,7 +54,7 @@ GEM
       railties (>= 3.1, < 4.1)
     hike (1.2.1)
     i18n (0.6.1)
-    jdl_tictactoe (0.0.4)
+    jdl_tictactoe (0.0.6)
     journey (1.0.4)
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)

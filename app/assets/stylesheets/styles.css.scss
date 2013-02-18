@@ -28,13 +28,17 @@ header {
   p {
     margin: 0;
     opacity: 0;
-    color: #5CBE73;
     font-family: "Helvetica";
     font-weight: bold;
     text-shadow: 3px 3px rgb(24,43,4);
     font-size: 150px;
     position: absolute;
     top: 10px; left: 50px;
+
+    &.mark1 {
+      color: #F3230C; }
+    &.mark2 {
+      color: #355DCA; }
   }
 
   &:hover {
