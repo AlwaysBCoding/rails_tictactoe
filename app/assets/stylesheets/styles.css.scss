@@ -51,3 +51,33 @@ header {
 .highlight {
   background-color: #f9f27c;
 }
+
+// MODAL STYLES
+
+fieldset {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#player1-mark, #player2-mark {
+  width: 25px;
+}
+
+.player-mark {
+  display: inline;
+  padding-right: 10px;
+}
+
+.player-species span {
+  position: relative;
+  top: 2px;
+}
+
+
+
+
+
+
+
+

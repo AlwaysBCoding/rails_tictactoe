@@ -5,9 +5,28 @@
 	.modal-header
 		%h3 Set up your Game
 	.modal-body
-		%h3 This is one input
+		#player1
+			%fieldset
+				%label#player1-species Player 1 is a?
+				%input.player-species{type: "radio", name: "player1-species", value: "human", checked: true}
+					%span Human
+				%input.player-species{type: "radio", name: "player1-species", value: "computer"}
+					%span Computer
+			%fieldset
+				%label.player-mark{for: "player1-mark"} Player 1 Mark
+				%input#player1-mark{name: "player1-mark", placeholder: "X"}
+		#player2
+			%fieldset
+				%label#player2-species Player 2 is a?
+				%input.player-species{type: "radio", name: "player2-species", value: "human"}
+					%span Human
+				%input.player-species{type: "radio", name: "player2-species", value: "computer", checked: true}
+					%span Computer
+			%fieldset
+				%label.player-mark{for: "player2-mark"} Player 2 Mark
+				%input#player2-mark{name: "player2-mark", placeholder: "O"}
 	.modal-footer
-		%a.btn.btn-primary{href: "#", data: { dismiss: "modal" }} Start Game
+		%a#intialize-game.btn.btn-primary{href: "#", data: { dismiss: "modal" }} Start Game
 
 #you-lose.modal.hide.fade
 	.modal-body
