@@ -1,0 +1,15 @@
+// SET CSS VARIABLES
+- square_size = 600.0 / @board.size
+- left_column = Array (0...(@board.size**2)).select { |sq| sq % @board.size == 0}
+- top_column = Array (0...@board.size)
+
+- @board.squares.flatten.each_with_index do |square, index|
+	- if !left_column.include?(index) && !top_column.include?(index)
+		.square{id: index + 1, style: "height: #{square_size}px; width: #{square_size}px; border-left: 5px solid black; border-top: 5px solid black;"}
+	- elsif !left_column.include?(index) && top_column.include?(index)
+		.square{id: index + 1, style: "height: #{square_size}px; width: #{square_size}px; border-left: 5px solid black;"}
+	- elsif left_column.include?(index) && !top_column.include?(index)
+		.square{id: index + 1, style: "height: #{square_size}px; width: #{square_size}px; border-top: 5px solid black;"}
+	- elsif left_column.include?(index) && top_column.include?(index)
+		.square{id: index + 1, style: "height: #{square_size}px; width: #{square_size}px;"}
+
