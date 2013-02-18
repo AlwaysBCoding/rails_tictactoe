@@ -9,9 +9,11 @@ $ ->
 			return "player2" if game.turn == "player1"
 			return "player1" if game.turn == "player2"
 		player1: {
+			species: "human"
 			mark: "X"
 		}
 		player2: {
+			species: "human"
 			mark: "O"
 		}
 	}
@@ -22,6 +24,8 @@ $ ->
 	initialize_game = ->
 		game.player1.mark = $("#player1-mark").val()
 		game.player2.mark = $("#player2-mark").val()
+		game.player1.species = $(".player-species:checked")[0].value
+		game.player2.species = $(".player-species:checked")[1].value
 		initialize_squares()
 
 	initialize_squares = ->
@@ -54,6 +58,9 @@ $ ->
 
 	$("#config").on "hide", ->
 		initialize_game()
+
+	$(".play-again").on "click", ->
+		window.location.reload(true)
 
 	setTimeout (->
 	  drop_config_modal()

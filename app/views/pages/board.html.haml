@@ -15,6 +15,7 @@
 			%fieldset
 				%label.player-mark{for: "player1-mark"} Player 1 Mark
 				%input#player1-mark{name: "player1-mark", placeholder: "X"}
+		%hr
 		#player2
 			%fieldset
 				%label#player2-species Player 2 is a?
@@ -33,11 +34,11 @@
 		%h2 The Computer has defeated you.
 	.modal-footer
 		%a.btn{href: "#", data: { dismiss: "modal"}} Close
-		%a.btn.btn-primary{href: "#", data: { dismiss: "modal"}} Play Again
+		%a.play-again.btn.btn-primary{href: "#", data: { dismiss: "modal"}} Play Again
 
 #draw-game.modal.hide.fade
 	.modal-body
 		%h2 And it's a draw...
 	.modal-footer
 		%a.btn{href: "#", data: { dismiss: "modal"}} Close
-		%a.btn.btn-primary{href: "#", data: { dismiss: "modal"}} Play Again
+		%a.play-again.btn.btn-primary{href: "#", data: { dismiss: "modal"}} Play Again

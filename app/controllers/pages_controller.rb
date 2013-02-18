@@ -6,8 +6,8 @@ class PagesController < ApplicationController
   end
 
   def update_move
-  	@player1 = JdlTicTacToe::Player.new("human", params[:game][:player1][:mark])
-  	@player2 = JdlTicTacToe::Player.new("computer", params[:game][:player2][:mark])
+  	@player1 = JdlTicTacToe::Player.new(params[:game][:player1][:species], params[:game][:player1][:mark])
+  	@player2 = JdlTicTacToe::Player.new(params[:game][:player2][:species], params[:game][:player2][:mark])
   	game = JdlTicTacToe::Game.new(@player1, @player2, params[:game][:board][:size].to_i)
   	params[:game][:board][:squares].each_with_index do |mark, index|
   		if mark.to_i == 0
